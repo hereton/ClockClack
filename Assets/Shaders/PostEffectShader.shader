@@ -44,12 +44,12 @@
 
 			fixed4 frag(v2f IN) : SV_Target
 			{
-				fixed4 col = tex2D(_MainTex, IN.uv + float2(sin(IN.vertex.y / _DistortionAmount + _Time[2]) / 10, sin(IN.vertex.x / 50 + _Time[1]) / 10));
+				fixed4 col = tex2D(_MainTex, IN.uv + float2(sin(IN.vertex.y / _DistortionAmount + _Time[2]) / 10, sin(IN.vertex.x / _DistortionAmount + _Time[1]) / 10));
 			// just invert the colors
-				
+
 			return col;
 		}
 		ENDCG
 	}
-	}
+		}
 }
